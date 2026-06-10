@@ -10,6 +10,27 @@
   <title>Higiene Hospitalar</title>
   <link rel="stylesheet" href="modules/mod_eventlistcal15q/mod_eventlistcal15q.css" type="text/css" />
   <script type="text/javascript" src="media/system/js/mootools.js"></script>
+<script>
+  if (typeof Symbol !== 'undefined' && Symbol.hasInstance) {
+    // Redefine how 'instanceof Element' works browser-wide
+    Object.defineProperty(Element, Symbol.hasInstance, {
+      value: function(instance) {
+        return !!(instance && instance.nodeType === 1);
+      },
+      configurable: true
+    });
+    
+    // Redefine how 'instanceof HTMLElement' works browser-wide
+    if (typeof HTMLElement !== 'undefined') {
+      Object.defineProperty(HTMLElement, Symbol.hasInstance, {
+        value: function(instance) {
+          return !!(instance && instance.nodeType === 1 && typeof instance.tagName === 'string');
+        },
+        configurable: true
+      });
+    }
+  }
+</script>
   <script type="text/javascript" src="media/system/js/caption.js"></script>
   <script type="text/javascript">
 		window.addEvent('load', function(){ var JTooltips = new Tips($$('.hasTip'), { maxTitleChars: 50, fixed: false}); });
@@ -40,12 +61,7 @@
 	</div>
 	<div id="inset" style="text-align:center; vertical-align:middle;">
 		<div id="logoset">
-            <object data="logo.swf" type="application/x-shockwave-flash" height="199" width="950">
-                <param name="src" value="logo.swf" />
-                <param name="wmode" value="transparent" />
-                <param name="base" value="/" />
-                <param name="name" value="logo.swf" />
-            </object>
+            
         </div>
 	</div>
 	<div id="content">
@@ -201,7 +217,9 @@
 
 <tr>
 <td valign="top">
-<img src="images/stories/example5.jpg" align="left" alt="image" border="0" /> A limpeza em hospitais, centro médico, laboratórios e afins vão muito além da necessidade de aparência de limpeza e a geRHação é uma das poucas empresas que dispõem de profissionais e know - how que estão aptos a desempenhar uma atividade altamente técnica e exigente como a área de saúde. Norteados por um sistema de padrão internacional de serviços que reúne maquinário, técnicas e treinamento humano. <br />Para integrar todos os seguimentos do mercado a  geRHação dispõem de profissionais de reconhecida experiência, seriedade e capacidade, que projetam de forma técnica e funcional os serviços a serem terceirizados, dando uma total segurança a empresas CONTRATANTE.</td>
+<img src="images/stories/example5.jpg" align="left" alt="image" border="0" /> A limpeza em hospitais, centro médico, laboratórios e afins vão muito além da necessidade de aparência de limpeza e a geRHação é uma das poucas empresas que dispõem de profissionais e know - how que estão aptos a desempenhar uma atividade altamente técnica e exigente como a área de saúde. Norteados por um sistema de padrão internacional de serviços que reúne maquinário, técnicas e treinamento humano. <br />Para integrar todos os seguimentos do mercado a  geRHação dispõem de profissionais de reconhecida experiência, seriedade e capacidade, que projetam de forma técnica e funcional os serviços a serem terceirizados, dando uma total segurança a empresas CONTRATANTE.
+
+</td>
 </tr>
 
 <tr>
@@ -231,5 +249,43 @@
 			</div>
 		</div>
 	</div>
-</body>	
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "polyfill": false,      // Stop Ruffle from hunting for tags
+        "autoplay": "on",       // Ensure the header plays instantly when ready
+        "splashScreen": false,   // Hide Ruffle's loading logo for a seamless look
+				"unmuteOverlay": "hidden"
+    };
+</script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<script>
+		document.addEventListener("DOMContentLoaded", () => {
+
+    // 2. DELAYED INJECTION OF THE ANIMATED HEADER
+    window.addEventListener("load", () => {
+        // Give the page 200-500ms to fully settle down
+        // setTimeout(() => {
+            if (window.RufflePlayer) {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+								player.style.width = '950px';
+								player.style.height="199px";
+                
+                // Select your empty header container
+                const container = document.getElementById("logoset");
+                container.appendChild(player);
+                
+                // Load your SWF file dynamically into the player
+                player.load({
+                    url: "logo.swf",
+                    // Match the scaling properties of your old header
+                    scale: "showAll", 
+                    wmode: "transparent"
+                });
+            }
+        // }, 300); 
+    });
+});
+	</script></body>	
 </html>

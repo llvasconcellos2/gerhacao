@@ -9,6 +9,27 @@
   <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
   <title>Terceirização de Serviços</title>
   <script type="text/javascript" src="media/system/js/mootools.js"></script>
+<script>
+  if (typeof Symbol !== 'undefined' && Symbol.hasInstance) {
+    // Redefine how 'instanceof Element' works browser-wide
+    Object.defineProperty(Element, Symbol.hasInstance, {
+      value: function(instance) {
+        return !!(instance && instance.nodeType === 1);
+      },
+      configurable: true
+    });
+    
+    // Redefine how 'instanceof HTMLElement' works browser-wide
+    if (typeof HTMLElement !== 'undefined') {
+      Object.defineProperty(HTMLElement, Symbol.hasInstance, {
+        value: function(instance) {
+          return !!(instance && instance.nodeType === 1 && typeof instance.tagName === 'string');
+        },
+        configurable: true
+      });
+    }
+  }
+</script>
   <script type="text/javascript" src="media/system/js/caption.js"></script>
 
 	<link rel="stylesheet" href="templates/system/css/general.css" type="text/css" />
@@ -43,7 +64,9 @@
 
 <tr>
 <td valign="top">
-<img border="0" align="left" src="images/stories/example4.jpg" alt="image" />O objetivo da geRHação é possibilitar aos clientes, maior e melhor desempenho em suas atividades globais de administração de recursos e serviços, agregando valores à suas estruturas de negócios e oferecendo-lhes soluções de serviços integrados para suas instalações, seus clientes, consumidores e funcionários. Entre alguns serviços, estão limpeza e conservação, copa, recepção, ascensoristas, zeladores, camareiras, manobristas, auxiliares, telefonistas, manutenção elétrica e hidráulica, manutenção de <br />áreas verdes(jardinagem), apoio à produção, portaria, auditoria, consultoria e outros. <br />Desta maneira, em sinergia, agrupando todos ou partes dos serviços periféricos em uma única empresa possibilita investimentos tecnológicos e humanos e conseqüentes reduções nos custos globais das empresas.</td>
+<img border="0" align="left" src="images/stories/example4.jpg" alt="image" />O objetivo da geRHação é possibilitar aos clientes, maior e melhor desempenho em suas atividades globais de administração de recursos e serviços, agregando valores à suas estruturas de negócios e oferecendo-lhes soluções de serviços integrados para suas instalações, seus clientes, consumidores e funcionários. Entre alguns serviços, estão limpeza e conservação, copa, recepção, ascensoristas, zeladores, camareiras, manobristas, auxiliares, telefonistas, manutenção elétrica e hidráulica, manutenção de <br />áreas verdes(jardinagem), apoio à produção, portaria, auditoria, consultoria e outros. <br />Desta maneira, em sinergia, agrupando todos ou partes dos serviços periféricos em uma única empresa possibilita investimentos tecnológicos e humanos e conseqüentes reduções nos custos globais das empresas.
+
+</td>
 </tr>
 
 <tr>
@@ -53,5 +76,43 @@
 </table>
 <span class="article_separator">&nbsp;</span>
 
-</body>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "polyfill": false,      // Stop Ruffle from hunting for tags
+        "autoplay": "on",       // Ensure the header plays instantly when ready
+        "splashScreen": false,   // Hide Ruffle's loading logo for a seamless look
+				"unmuteOverlay": "hidden"
+    };
+</script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<script>
+		document.addEventListener("DOMContentLoaded", () => {
+
+    // 2. DELAYED INJECTION OF THE ANIMATED HEADER
+    window.addEventListener("load", () => {
+        // Give the page 200-500ms to fully settle down
+        // setTimeout(() => {
+            if (window.RufflePlayer) {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+								player.style.width = '950px';
+								player.style.height="199px";
+                
+                // Select your empty header container
+                const container = document.getElementById("logoset");
+                container.appendChild(player);
+                
+                // Load your SWF file dynamically into the player
+                player.load({
+                    url: "logo.swf",
+                    // Match the scaling properties of your old header
+                    scale: "showAll", 
+                    wmode: "transparent"
+                });
+            }
+        // }, 300); 
+    });
+});
+	</script></body>
 </html>

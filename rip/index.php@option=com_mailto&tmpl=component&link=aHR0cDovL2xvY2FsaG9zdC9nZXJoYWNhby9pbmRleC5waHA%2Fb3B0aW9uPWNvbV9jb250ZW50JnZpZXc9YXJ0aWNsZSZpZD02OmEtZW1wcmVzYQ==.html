@@ -78,5 +78,43 @@
 	<input type="hidden" name="tmpl" value="component" />
 	<input type="hidden" name="link" value="aHR0cDovL2xvY2FsaG9zdC9nZXJoYWNhby9pbmRleC5waHA/b3B0aW9uPWNvbV9jb250ZW50JnZpZXc9YXJ0aWNsZSZpZD02OmEtZW1wcmVzYQ==" />
 	<input type="hidden" name="f68ee05bc62c2bba092e5deb5e3b9f14" value="1" /></form>
-</body>
+<script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+        "polyfill": false,      // Stop Ruffle from hunting for tags
+        "autoplay": "on",       // Ensure the header plays instantly when ready
+        "splashScreen": false,   // Hide Ruffle's loading logo for a seamless look
+				"unmuteOverlay": "hidden"
+    };
+</script>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<script>
+		document.addEventListener("DOMContentLoaded", () => {
+
+    // 2. DELAYED INJECTION OF THE ANIMATED HEADER
+    window.addEventListener("load", () => {
+        // Give the page 200-500ms to fully settle down
+        // setTimeout(() => {
+            if (window.RufflePlayer) {
+                const ruffle = window.RufflePlayer.newest();
+                const player = ruffle.createPlayer();
+								player.style.width = '950px';
+								player.style.height="199px";
+                
+                // Select your empty header container
+                const container = document.getElementById("logoset");
+                container.appendChild(player);
+                
+                // Load your SWF file dynamically into the player
+                player.load({
+                    url: "logo.swf",
+                    // Match the scaling properties of your old header
+                    scale: "showAll", 
+                    wmode: "transparent"
+                });
+            }
+        // }, 300); 
+    });
+});
+	</script></body>
 </html>
