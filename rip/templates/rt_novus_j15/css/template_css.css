@@ -715,7 +715,7 @@ fieldset.input {
 	height: 60px;
 	line-height: 48px;
 	color: #666;
-	background: url(http://localhost/gerhacao/templates/rt_novus_j15/images/h3-arrow.png) 0 16px no-repeat;
+	background: url(../images/h3-arrow.png) 0 15px no-repeat;
 }
 
 .rok-content-rotator h2 {
