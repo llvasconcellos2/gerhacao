@@ -794,6 +794,11 @@ fieldset.input {
 	left: 0;
 	top: 0;
 	margin-right: 250px;
+	opacity: 0;
+}
+
+.rok-content-rotator .rotator-4 ul > li:first-child .content {
+	opacity: 1;
 }
 
 .rok-content-rotator .readon {
