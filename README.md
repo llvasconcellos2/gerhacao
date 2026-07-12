@@ -58,9 +58,12 @@ A Joomla 1.5 portal built in 2009 for geRHação, a Brazilian HR consultancy, un
 
 geRHação Gestão de Recursos Humanos is a Brazilian HR consultancy operating in Joinville, Santa Catarina. The firm needed a web presence that could do real work — not just display a phone number, but actively support recruitment, course sales, and business development simultaneously. This portal, launched in 2009, was built on Joomla 1.5 to give a non-technical team full content ownership over every section.
 
-- **Job listings portal** connecting candidates with employer clients, driving application volume and reducing the manual overhead of managing open positions by phone and email
-- **Professional training course catalog** showcasing geRHação's development curriculum — workshops, soft-skills programs, and certification courses — turning the site into an active lead generation channel for the training business
-- **Client showcase and corporate credibility section** displaying the firm's roster of B2B clients, giving prospects the social proof needed to start a conversation at the top of the sales funnel
+<!-- KEY FEATURES -->
+### Key Features
+
+- **Job listings portal** — connecting candidates with employer clients, driving application volume and reducing the manual overhead of managing open positions by phone and email
+- **Professional training course catalog** — showcasing geRHação's development curriculum — workshops, soft-skills programs, and certification courses — turning the site into an active lead generation channel for the training business
+- **Client showcase and corporate credibility section** — displaying the firm's roster of B2B clients, giving prospects the social proof needed to start a conversation at the top of the sales funnel
 
 **Job Listings**
 
